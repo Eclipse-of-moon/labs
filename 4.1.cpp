@@ -44,10 +44,10 @@ void task1() {
     InputString(input);
 
     if (CheckPalindrome(input)) {
-        std::cout << "This is palindrome" << endl;
+        std::cout << "This is palindrome" << std::endl;
     }
     else {
-        std::cout << "This is't palindrome" << endl;
+        std::cout << "This is't palindrome" << std::endl;
     }
 
     system("pause");
@@ -102,14 +102,14 @@ void task2() {
     if (output_position1 > 0) {
         std::cout << "\nYour searched first position: " << output_position1 << "\n\n";
 
-        std::cout << "All positions:" << endl;
+        std::cout << "All positions:" << std::endl;
         int* output_position2 = find_substring2(input, substring); //second
         for (int i = 0; i <= sizeof(output_position2) / sizeof(output_position2[0]); i++) {
-            std::cout << output_position2[i] << endl;
+            std::cout << output_position2[i] << std::endl;
         }
     }
     else {
-        std::cout << "Cant find your substring" << endl;;
+        std::cout << "Cant find your substring" << std::endl;;
     }
 
     system("pause");
@@ -136,7 +136,7 @@ void task3() {
     std::cin >> key;
 
     encrypt(str_for_encrypt, key);
-    std::cout << "Encrypted message: " << str_for_encrypt << endl;
+    std::cout << "Encrypted message: " << str_for_encrypt << std::endl;
 
     system("pause");
 }
@@ -171,7 +171,7 @@ void task4() {
     char str_for_filter[255];
     InputString(str_for_filter);
 
-    std::cout << "Filtered message: " << Filter_string(str_for_filter) << endl;
+    std::cout << "Filtered message: " << Filter_string(str_for_filter) << std::endl;
 
     system("pause");
 }
@@ -212,3 +212,4 @@ int main() {
         }
     }
 }
+
