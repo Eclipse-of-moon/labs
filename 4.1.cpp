@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cstring>
 
-using namespace std;
 
 void InputString(char* input) {
     int i = 0;
@@ -37,13 +36,12 @@ bool CheckPalindrome(const char* text) {
 void task1() {
 
     std::cout << "Palindrome\n\n";
-
     std::cout << "Enter full string: ";
 
-    char input[255];
-    InputString(input);
+    char input[255]; // Максимальная длина строки
+    InputString(input); // Ввод строки 
 
-    if (CheckPalindrome(input)) {
+    if (CheckPalindrome(input)) { // Вызов функции проверки палиндрома
         std::cout << "This is palindrome" << std::endl;
     }
     else {
@@ -53,9 +51,9 @@ void task1() {
     system("pause");
 }
 
-int find_substring1(const char* str_for_search_in, const char* substring, int start_position) {
+int find_substring1(const char* str_for_search_in, const char* substring, int start_position) { // вызов функции поиска 
     int j;
-    for (int i = start_position; i < strlen(str_for_search_in); i++) {
+    for (int i = start_position; i < strlen(str_for_search_in); i++) { 
         j = 0;
         while (str_for_search_in[i + j] == substring[j]) {
             j++;
@@ -90,26 +88,27 @@ void task2() {
 
     std::cout << "Enter full string: ";
     char input[255];
-    InputString(input);
+    InputString(input); // Ввод текста
     std::cout << "Enter search string: ";
-    char substring[50];
+    char substring[50]; // Ввод текста, который нужно найти
     InputString(substring);
     std::cout << "Enter search start position num: ";
-    int start_position;
+    int start_position; // Ввод позиции начала поиска
     std::cin >> start_position;
 
     int output_position1 = find_substring1(input, substring, start_position); //first
-    if (output_position1 > 0) {
-        std::cout << "\nYour searched first position: " << output_position1 << "\n\n";
 
-        std::cout << "All positions:" << std::endl;
+    if (output_position1 > 0) {
+        std::cout << "\nYour searched first position: " << output_position1 << "\n\n"; // Позциция первой найденной подстроки
+
+        std::cout << "All positions:" << std::endl; // Позиции всех найденых подстрок
         int* output_position2 = find_substring2(input, substring); //second
         for (int i = 0; i <= sizeof(output_position2) / sizeof(output_position2[0]); i++) {
             std::cout << output_position2[i] << std::endl;
         }
     }
     else {
-        std::cout << "Cant find your substring" << std::endl;;
+        std::cout << "Cant find your substring" << std::endl;;  // Выводится в том случае, если в тексте подстрок не найдено
     }
 
     system("pause");
